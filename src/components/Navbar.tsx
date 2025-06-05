@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-    FaBars, FaTimes, FaHome, FaUser, FaBriefcase, FaFolderOpen, FaEnvelope, FaLinkedin, FaGithub
+    FaBars, FaTimes, FaHome, FaUser, FaBriefcase, FaFolderOpen, FaEnvelope, FaLinkedin, FaGithub, FaCode, FaTools
 } from "react-icons/fa";
+
 import profilePic from "../assets/profile_pic.jpg";
 import type { IconType } from "react-icons";
 import NavbarLink from "./NavbarLink";
@@ -10,8 +11,10 @@ import NavbarLink from "./NavbarLink";
 const navbarLinks: { name: string; to: string; icon: IconType }[] = [
     { name: "Home", to: "/", icon: FaHome },
     { name: "About", to: "/about", icon: FaUser },
+    { name: "Skills", to: "/skills", icon: FaTools },
     { name: "Experience", to: "/experience", icon: FaBriefcase },
-    { name: "Portfolio", to: "/portfolio", icon: FaFolderOpen },
+    { name: "Projects", to: "/projects", icon: FaCode },
+    { name: "Blog", to: "/blog", icon: FaFolderOpen },
     { name: "Contact", to: "/contact", icon: FaEnvelope },
 ];
 
