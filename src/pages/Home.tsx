@@ -98,11 +98,4 @@ const Home = () => {
     );
 };
 
-const Stat = ({ title, value }: { title: string; value: string }) => (
-    <div className="text-center">
-        <p className="text-2xl font-bold text-orange-400">{value}</p>
-        <p className="text-stone-400 text-sm">{title}</p>
-    </div>
-);
-
 export default Home;
