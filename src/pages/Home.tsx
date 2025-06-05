@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar";
 import profilePic from "../assets/profile_pic.jpg";
 import AnimatedName from "../components/AnimatedName";
 import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
