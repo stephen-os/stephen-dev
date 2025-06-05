@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import profilePic from "../assets/profile_pic.jpg";
 import AnimatedName from "../components/AnimatedName";
-import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
 import { HiDocumentDownload } from "react-icons/hi";
 
 import { GitHubContributionHistory } from "../components/GitHubContributionHistory";
@@ -44,25 +43,6 @@ const Home = () => {
                                     <HiDocumentDownload size={20} />
                                     <span>Download Resume</span>
                                 </a>
-
-                                {/* In 2 places at once, dont think we need this here but keep it for now 
-                                <div className="flex space-x-4">
-                                    <a
-                                        href="https://github.com/yourgithub"
-                                        target="_blank"
-                                        className="w-10 h-10 bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-orange-400 rounded-full flex items-center justify-center shadow-md transition"
-                                    >
-                                        <FaGithub size={18} />
-                                    </a>
-                                    <a
-                                        href="https://linkedin.com/in/yourlinkedin"
-                                        target="_blank"
-                                        className="w-10 h-10 bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-orange-400 rounded-full flex items-center justify-center shadow-md transition"
-                                    >
-                                        <FaLinkedin size={18} />
-                                    </a>
-                                </div>
-                                */}
                             </div>
                         </div>
                     </section>
