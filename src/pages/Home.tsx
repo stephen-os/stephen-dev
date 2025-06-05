@@ -4,25 +4,38 @@ import AnimatedName from "../components/AnimatedName";
 import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
 import { HiDocumentDownload } from "react-icons/hi";
 
+import { GitHubContributionHistory } from "../components/GitHubContributionHistory";
+import { GitHubStatsBar } from "../components/GitHubStatsBar";
+
 const Home = () => {
+    /**
+     * The home page of the website, which displays a hero section with animated
+     * name, intro text, CTA buttons, and a profile picture. It also displays a
+     * floating stats bar with various stats such as years of experience, number of
+     * GitHub repos, contributions, and LeetCode problems solved.
+     *
+     * @return {JSX.Element} The home page component.
+     */
     return (
-        <div className="relative w-full min-h-screen bg-neutral-900 text-white overflow-hidden pb-32">
+        <body className="relative w-full min-h-screen bg-neutral-900 text-white overflow-hidden">
+
             <Navbar />
 
             {/* Main container */}
-            <div className="relative z-10 pt-24 md:pt-32 px-6">
-                <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
+            <main className="sm:pt-16 md:pt-32">
+
+                <section className="max-w-screen-lg mx-auto flex sm:flex-col md:flex-row sm:items-center md:items-start sm:gap-10 md:gap-16 pl-8 pr-8">
 
                     {/* Left: Intro */}
-                    <div className="flex-1 text-center md:text-left">
+                    <section className="sm:flex flex-col md:flex-row sm:text-center md:text-left">
                         <div className="space-y-6">
                             <AnimatedName />
-                            <p className="text-base md:text-lg text-stone-400 max-w-sm md:max-w-md mx-auto md:mx-0">
+                            <p className="text-stone-400 sm:text-base md:text-lg sm:max-w-sm md:max-w-md sm:mx-auto md:mx-0">
                                 I'm a software engineer passionate about building graphics tools, full-stack systems, and exploring low-level design.
                             </p>
 
                             {/* CTA Buttons */}
-                            <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                            <div className="flex space-x-6 sm:flex-col md:flex-row sm:items-center md:items-start sm:space-y-4 md:space-y-0">
                                 <a
                                     href="/resume.pdf"
                                     download
@@ -57,29 +70,31 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+
+                    <section className="flex-1"></section>
 
                     {/* Right: Profile Picture */}
-                    <div className="flex justify-center flex-1">
+                    <section className="flexsm:justify-center md:justify-end">
                         <img
                             src={profilePic}
                             alt="Profile"
                             className="w-40 h-40 md:w-72 md:h-72 object-cover rounded-full shadow-xl border-4 border-white"
                         />
-                    </div>
-                </div>
+                    </section>
+                </section>
 
                 {/* Floating Stats Bar */}
-                <div className="mt-16 md:mt-24 w-full flex justify-center">
-                    <div className="w-full max-w-screen-md bg-neutral-800 border border-stone-700 rounded-2xl shadow-lg px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
-                        <Stat title="Years of Experience" value="3+" />
-                        <Stat title="GitHub Repos" value="40+" />
-                        <Stat title="Contributions" value="1,200+" />
-                        <Stat title="LeetCode Solved" value="350+" />
-                    </div>
+                <div className="mt-16 md:mt-24 max-w-screen-lg mx-auto px-8">
+                    <GitHubStatsBar username="stephen-os" token={import.meta.env.VITE_GITHUB_TOKEN} />
                 </div>
-            </div>
-        </div>
+
+                {/* GitHub Contributions */}
+                <div className="mt-16 md:mt-24 max-w-screen-lg mx-auto px-8">
+                    <GitHubContributionHistory username="stephen-os" token={import.meta.env.VITE_GITHUB_TOKEN} />
+                </div>
+            </main>
+        </body >
     );
 };
 
